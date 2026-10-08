@@ -47,3 +47,9 @@ METHOD(jobject, getResults, jint start, jint maxResults) {
 } CATCH_EXCEPTION(nullptr)
 
 GETTER(jlong, getEstimatedMatches)
+
+METHOD0(void, cancel) {
+  THIS->cancel();
+} CATCH_EXCEPTION()
+
+GETTER(jboolean, isCancelled)

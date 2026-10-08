@@ -26,6 +26,11 @@ public class Search
   public native SearchIterator getResults(int start, int maxResults);
   public native long getEstimatedMatches();
 
+  // Abort an in-flight match from another thread; sticky.
+  // getResults()/getEstimatedMatches() then throw CancellationException.
+  public native void cancel();
+  public native boolean isCancelled();
+
   @Override
   protected void finalize() { dispose(); }
 
