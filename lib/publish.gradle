@@ -55,11 +55,14 @@ afterEvaluate {
     }
 }
 
-signing {
-    useInMemoryPgpKeys(
-            keyId,
-            key,
-            password,
-    )
-    sign publishing.publications
+// Sign only when a key is configured; mavenLocal publishes must work without one.
+if (key) {
+    signing {
+        useInMemoryPgpKeys(
+                keyId,
+                key,
+                password,
+        )
+        sign publishing.publications
+    }
 }

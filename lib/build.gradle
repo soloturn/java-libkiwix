@@ -19,7 +19,8 @@ ext["sonatypeStagingProfileId"] = properties.getProperty("sonatypeStagingProfile
 ext {
     set("GROUP_ID", "org.kiwix")
     set("ARTIFACT_ID", "libkiwix")
-    set("VERSION", "2.7.0")
+    def mainSoloHash = 'git rev-parse --short=12 HEAD'.execute(null, rootProject.projectDir).text.trim()
+    set("VERSION", "2.7.0-main-solo-${mainSoloHash}")
 }
 
 // Replace these versions with the latest available versions of libkiwix and libzim
