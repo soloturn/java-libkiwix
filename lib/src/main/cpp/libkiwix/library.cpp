@@ -59,7 +59,7 @@ METHOD(jboolean, removeBookById, jstring id) {
 } CATCH_EXCEPTION(false)
 
 METHOD(jboolean, writeToFile, jstring path) {
-  return TO_JNI(THIS->writeToFile(TO_C(path)));
+  return TO_JNI(THIS->writeAsXML(TO_C(path)));
 } CATCH_EXCEPTION(false)
 
 METHOD(jboolean, writeBookmarksToFile, jstring path) {

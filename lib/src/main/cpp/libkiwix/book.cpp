@@ -58,7 +58,9 @@ GETTER(jstring, getTitle)
 
 GETTER(jstring, getDescription)
 
-GETTER(jstring, getLanguage)
+METHOD0(jstring, getLanguage) {
+  return TO_JNI(THIS->getCommaSeparatedLanguages());
+} CATCH_EXCEPTION(0)
 GETTER(jstring, getCommaSeparatedLanguages)
 GETTER(jobjectArray, getLanguages)
 
@@ -68,7 +70,9 @@ GETTER(jstring, getPublisher)
 
 GETTER(jstring, getDate)
 
-GETTER(jstring, getUrl)
+METHOD0(jstring, getUrl) {
+  return TO_JNI(THIS->getUrl(kiwix::Book::AcquisitionLinkKind::DIRECT));
+} CATCH_EXCEPTION(0)
 
 GETTER(jstring, getName)
 

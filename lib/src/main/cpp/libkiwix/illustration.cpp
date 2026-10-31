@@ -35,19 +35,19 @@ METHOD0(void, dispose)
 } CATCH_EXCEPTION()
 
 METHOD0(jint, width) {
-  return TO_JNI(THIS->width);
+  return TO_JNI(THIS->getWidth());
 } CATCH_EXCEPTION(0)
 
 METHOD0(jint, height) {
-  return TO_JNI(THIS->height);
+  return TO_JNI(THIS->getHeight());
 } CATCH_EXCEPTION(0)
 
 METHOD0(jstring, mimeType) {
-  return TO_JNI(THIS->mimeType);
+  return TO_JNI(THIS->getMimeType());
 } CATCH_EXCEPTION(nullptr)
 
 METHOD0(jstring, url) {
-  return TO_JNI(THIS->url);
+  return TO_JNI(THIS->getUrl());
 } CATCH_EXCEPTION(nullptr)
 
 METHOD0(jbyteArray, getData) {
