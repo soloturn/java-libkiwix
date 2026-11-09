@@ -24,21 +24,12 @@ import org.kiwix.libkiwix.Library;
 public class Manager
 {
   /**
-   * Read a `library.xml` file and add books in the library.
+   * Read a local OPDS library file and add its books to the library.
    *
-   * @param path The (utf8) path to the `library.xml` file.
+   * @param path The (utf8) path to the OPDS library file.
    * @return True if the file has been properly parsed.
    */
   public native boolean readFile(String path);
-
-  /**
-   * Load a library content stored in a string (at `library.xml` format).
-   *
-   * @param content The content corresponding of the library xml.
-   * @param libraryPath The library path (used to resolve relative paths)
-   * @return True if the content has been properly parsed.
-   */
-  public native boolean readXml(String content, String libraryPath);
 
   /**
    * Load a library content stored in a string (at OPDS stream format)

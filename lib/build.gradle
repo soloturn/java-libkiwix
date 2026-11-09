@@ -23,8 +23,8 @@ ext {
     set("VERSION", "2.7.0-main-solo-${mainSoloHash}")
 }
 
-// Replace these versions with the latest available versions of libkiwix and libzim
-ext.libkiwix_version = "14.2.1"
+// Native Android libraries are rebuilt from the libkiwix 15.0.0 source tree.
+ext.libkiwix_version = "15.0.0"
 ext.libzim_version = "9.8.2"
 
 apply from: 'publish.gradle'
